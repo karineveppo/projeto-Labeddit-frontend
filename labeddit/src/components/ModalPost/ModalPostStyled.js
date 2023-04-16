@@ -1,60 +1,39 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const StyledMain = styled.section`
+export const ContainerModalStyled = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: #FFFFFF;
-`
-
-export const StyleSectionLoginSignup = styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 90%;
-    height: 100vh;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
     
-    p{
-        font-family: 'Noto Sans';
-        font-weight: 400;
-        font-size: 14px;
-        color: #000000;
-        margin-bottom: 1vh;
+    header{
+        margin-top: 30px;
     }
     
-    div{
-        height: 30%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 1vh;
-        
-        .signUpButton{
-            background: #FFFFFF;
-            border: 1px solid #FE7E02;
-            color: #FE7E02;
-        }
-        
-        .CheckBox{
-            height: 18px;
-            width: 18px;
-        }
+    @media screen and (min-device-width: 500px){
+        top: 2%;
+        left: 4%;
+        width: 90%;
+        position: absolute;
     }
 `
 
-export const StyleSection = styled.section`
+export const SectionStyled = styled.section`
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 90%;
-    height: 100vh;
+    // min-height: 100vh;
+    animation: FromRight .7s .4s backwards;
     
     div:first-child{
         margin-top: 2vh;
-        min-height: 26vh;
+        min-height: 40vh;
+        margin-bottom: 2vh;
         width: 100%;
     }
     
@@ -121,11 +100,22 @@ export const StyleSection = styled.section`
                 gap: 18px;
                 border: 1px solid #E0E0E0;
                 border-radius: 28px;
+                img:hover{
+                    cursor:pointer;
+                }
             }
-            
-            span:hover{
-                cursor: pointer;
-            }
+        }
+    }
+    
+    @keyframes FromRight{
+        from{
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        
+        to{
+            opacity: 1;
+            transform: translateX(0px);
         }
     }
 `
